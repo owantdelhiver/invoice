@@ -16,16 +16,18 @@
         <thead>
         <tr>
             <th scope="col">#</th>
-            <th scope="col">Description</th>
-            <th scope="col">Prix</th>
+            <th scope="col">Entreprise</th>
+            <th scope="col">Date</th>
+            <th scope="col">Date écheance</th>
             <th scope="col"></th>
         </tr>
         </thead>
         <tbody>
         <tr th:each="facture : ${factures}">
             <th scope="row"><span th:text="${facture.id}"></span></th>
-<!--            <td><span th:text="${facture.description}"></span></td>-->
-<!--            <td><span th:text="${facture.prix}"></span></td>-->
+            <td><span th:text="${facture.client.entreprise}"></span></td>
+            <td><span th:text="${facture.date}"></span></td>
+            <td><span th:text="${facture.dateEcheance}"></span></td>
             <td class="edit-button">
                 <div class="btn-group" role="group">
                     <a th:href="@{/produits/edit/{id}(id=${facture.id})}" class="btn btn-warning">

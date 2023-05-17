@@ -22,7 +22,7 @@ public class Facture {
     private Client client;
 
     @ManyToMany
-    @JoinTable(name = "facture_product", joinColumns = @JoinColumn(name = "id_client"), inverseJoinColumns = @JoinColumn(name = "id_product"))
+    @JoinTable(name = "facture_product", joinColumns = @JoinColumn(name = "id_facture"), inverseJoinColumns = @JoinColumn(name = "id_product"))
     private List<Produit> produit;
 
     public Facture() {
