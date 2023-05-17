@@ -14,4 +14,16 @@ public class ClientService {
     public List<Client> fetchAll() {
         return clientRepository.findAll();
     }
+
+    public Client fetchById(int id) {
+        return clientRepository.findById(id).get();
+    }
+
+    public void save(Client client) {
+        clientRepository.save(client);
+    }
+
+    public void delete(int id){
+        clientRepository.deleteById(id);
+    }
 }

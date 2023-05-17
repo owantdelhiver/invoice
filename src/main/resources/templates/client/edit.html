@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<header th:replace="~{fragments/head.html :: header}"></header>
+
+<h1>Edit client</h1>
+
+<form action="#" th:action="@{/clients/edit/{id}(id=${client.id})}" th:object="${client}" method="post">
+
+    <div class="mb-3">
+        <label for="entreprise" class="form-label">Entreprise :</label>
+        <input type="text" class="form-control" id="entreprise" th:field="*{entreprise}">
+    </div>
+
+    <div class="mb-3">
+        <label for="rue" class="form-label">Rue :</label>
+        <input type="text" class="form-control" id="rue" th:field="*{rue}">
+    </div>
+
+    <div class="mb-3">
+        <label for="ville" class="form-label">Ville :</label>
+        <input type="text" class="form-control" id="ville" th:field="*{ville}">
+    </div>
+
+    <div class="mb-3">
+        <label for="codepostal" class="form-label">Code postal :</label>
+        <input type="text" class="form-control" id="codepostal" th:field="*{codePostal}">
+    </div>
+
+    <div class="mb-3">
+        <label for="telephone" class="form-label">Téléphone :</label>
+        <input type="text" class="form-control" id="telephone" th:field="*{telephone}">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</body>
+</html>
