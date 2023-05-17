@@ -35,7 +35,7 @@ public class FactureController {
 
     @PostMapping("create")
     public String createPost(@ModelAttribute Facture facture) {
-        System.out.println("toto");
+        factureService.save(facture);
         return "redirect:/factures";
     }
 }

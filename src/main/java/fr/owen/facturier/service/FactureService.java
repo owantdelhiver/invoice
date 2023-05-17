@@ -14,4 +14,7 @@ public class FactureService {
     public List<Facture> fetchAll() {
         return factureRepository.findAll();
     }
+    public void save(Facture facture) {
+        factureRepository.save(facture);
+    }
 }
