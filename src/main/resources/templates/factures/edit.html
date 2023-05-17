@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<header th:replace="~{fragments/head.html :: header}"></header>
+
+<h1>Edit facture</h1>
+<form action="#" th:action="@{/factures/edit/{id}(id=${facture.id})}" th:object="${facture}" method="post">
+
+  <div class="mb-3">
+    <label for="description" class="form-label">Date :</label>
+    <input type="date" class="form-control" id="description" th:field="*{date}">
+  </div>
+
+  <div class="mb-3">
+    <label for="dateEcheance" class="form-label">Date Echeance :</label>
+    <input type="date" class="form-control" id="dateEcheance" th:field="*{dateEcheance}">
+  </div>
+
+  <div class="mb-3">
+    <select class="form-select" aria-label="Default select example" th:field="*{client}">
+      <option selected disabled value="0">Choisir un client</option>
+      <option th:each="client:${clients}" th:value="${client.id}" th:text="${client.entreprise}"></option>
+    </select>
+  </div>
+
+  <div class="mb-3">
+    <select class="form-select" aria-label="Default select example" th:field="*{paiement}">
+      <option selected disabled value="0">Choisir un paiement</option>
+      <option value="Carte bancaire">Carte bancaire</option>
+      <option value="Cheque">Cheque</option>
+      <option value="Virement">Virement</option>
+    </select>
+  </div>
+
+  <div class="mb-3">
+    <select class="form-select" multiple th:field="*{produits}">
+      <option th:each="produit:${produits}" th:value="${produit.id}" th:text="${produit.description}"></option>
+    </select>
+  </div>
+
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+</body>
+</html>

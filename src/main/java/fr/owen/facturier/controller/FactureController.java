@@ -41,6 +41,20 @@ public class FactureController {
         return "redirect:/factures";
     }
 
+    @GetMapping("edit/{id}")
+    public String editGet(Model model, @PathVariable int id) {
+        model.addAttribute("facture", factureService.fetchById(id));
+        model.addAttribute("clients", clientService.fetchAll());
+        model.addAttribute("produits", produitService.fetchAll());
+        return "factures/edit";
+    }
+
+    @PostMapping("edit/{id}")
+    public String editGet(@ModelAttribute Facture facture) {
+        factureService.save(facture);
+        return "redirect:/factures";
+    }
+
     @GetMapping("delete/{id}")
     public String delete(@PathVariable int id) {
         factureService.delete(id);
