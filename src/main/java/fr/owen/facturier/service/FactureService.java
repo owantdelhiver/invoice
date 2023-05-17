@@ -14,7 +14,14 @@ public class FactureService {
     public List<Facture> fetchAll() {
         return factureRepository.findAll();
     }
+    public Facture fetchById(int id) {
+        return factureRepository.findById(id).get();
+    }
     public void save(Facture facture) {
         factureRepository.save(facture);
+    }
+
+    public void delete(int id) {
+        factureRepository.deleteById(id);
     }
 }

@@ -23,7 +23,7 @@ public class Facture {
 
     @ManyToMany
     @JoinTable(name = "facture_product", joinColumns = @JoinColumn(name = "id_facture"), inverseJoinColumns = @JoinColumn(name = "id_product"))
-    private List<Produit> produit;
+    private List<Produit> produits;
 
     public Facture() {
     }
@@ -68,11 +68,11 @@ public class Facture {
         this.client = client;
     }
 
-    public List<Produit> getProduit() {
-        return produit;
+    public List<Produit> getProduits() {
+        return produits;
     }
 
-    public void setProduit(List<Produit> produit) {
-        this.produit = produit;
+    public void setProduits(List<Produit> produits) {
+        this.produits = produits;
     }
 }
