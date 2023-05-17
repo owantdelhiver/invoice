@@ -1,5 +1,6 @@
-package fr.owen.facturier.model;
+package fr.owen.facturier.model.admin;
 
+import fr.owen.facturier.model.Role;
 import jakarta.persistence.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -11,6 +12,7 @@ import java.util.List;
 @Entity
 public class Admin implements UserDetails {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String mail;
     private String password;

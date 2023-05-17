@@ -1,6 +1,6 @@
 package fr.owen.facturier.repository;
 
-import fr.owen.facturier.model.Admin;
+import fr.owen.facturier.model.admin.Admin;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
